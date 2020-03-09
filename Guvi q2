@@ -1,0 +1,58 @@
+#include<iostream.h>
+#include<conio.h>
+class employee
+{
+ char name[20];
+ double s;
+ int n,a,hike;
+ public:
+ void getinfo()
+ {
+  char q;
+  cout<<"Enter Name:";
+  cin>>name;
+  cout<<"\n\nEnter Age:";
+  cin>>a;
+  cout<<"\n\nEnter Salary:";
+  cin>>s;
+  cout<<"\n\nDo you have daughter?(Y/N)";
+  cin>>q;
+  if(q=='Y'||q=='y')
+  {
+   cout<<"\nEnter How Many Daughters You Have:";
+   cin>>n;
+  }
+ getch();
+}
+friend void frn(employee)
+};
+
+void frn(employee e)
+{
+   if(e.a>40)
+    e.hike=10*e.s/100;
+   else if(e.n>1)
+    e.hike=15*e.s/100;
+   else if(e.s>30000)
+    e.hike=25*e.s/100;
+   else
+    e.hike=5*e.s/100;
+
+   if(e.a>40 && e.n>1)
+    e.hike=10*e.s/100 + 15*e.s/100;
+   else if(e.a>40 && e.s>30000)
+    e.hike=10*e.s/100 + 25*e.s/100;
+   else if(e.n>1 && e.s>30000)
+    e.hike=15*e.s/100 + 25*e.s/100;
+cout<<"As Per Your Data Your Salary Now="<<e.hike;
+getch();
+}
+
+void main()
+{
+ clrscr();
+ employee e1;
+ e1.getinfo();
+ frn(e1);
+ getch();
+}
