@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+template<class T>
+T largest(T A[],int a) 
+{ 
+    T p = A[0]; 
+    for (int i = 0; i <= a; i++) 
+    {
+        if (A[i] > p) 
+        p = A[i];
+    }
+    return p; 
+} 
+int main() 
+{ 
+    int a=5,A[100];
+    char B[5];
+    double C[5];
+    cout<<"Enter the array : \n";
+    for(int i=0;i<a;i++)
+    {
+        cin>>A[i];
+    }
+    cout<<"Largest is "<<largest(A, a)<<endl; 
+    cout <<"Character values :\n";
+    for(int j=0; j < a; j++)
+    {
+        cin >> B[j];
+    }
+    cout<<" largest Character is : "<<largest(B,a)<<endl;
+    cout <<"Decimal values: \n";
+    for(int k=0; k < a; k++)
+    {
+        cin >> C[k];
+    }
+    cout<<" largest is : "<<largest(C,a)<<endl;
+    return 0; 
+}
